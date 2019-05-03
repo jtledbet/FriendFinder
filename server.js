@@ -10,9 +10,14 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(PORT, function() {})
+app.listen(PORT, function() {
+    console.log("listening on port %s", PORT, "...")
+})
 
 app.get("/", function(req, res) {
-    res.json(path.join(__dirname, "\app\public\home.html"));
+    res.sendFile(path.join(__dirname, "/app/public/home.html"));
   });
-  
+
+  app.get("/home", function(req, res) {
+    res.sendFile(path.join(__dirname, "/app/public/home.html"));
+  });
