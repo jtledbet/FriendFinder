@@ -5,19 +5,31 @@
 //      This route will also be used to handle the compatibility logic.
 
 
-var friends = require('../data/friends.js');
+var friends = require("../data/friends.js");
 
 module.exports = function(app) {
     console.log ("api Routes GO!")
     
     // Display possible friends:
-    app.get('/api/friends', function(req, res) {
+    app.get("/api/friends", function(req, res) {
+        console.log("GET SUCCESSFUL!")
         res.json(friends);
-        console.log(res.json(friends))
     });
 
     // Incoming survey results:
-    app.post('/api/friends', function(req, res) {
-        console.log("req")
-    });
+    app.post("/api/friends", function(req, res) {
+        console.log("POSTING!")
+
+        // console.log(req);
+
+		var surveySays = req.body;
+		console.log("surveySays: " + JSON.stringify(surveySays));
+
+		// var justScores = surveySays.scores;
+		// console.log("scores: " + justScores);
+
+		// Add new user
+		friends.push(surveySays);
+
+	});
 }

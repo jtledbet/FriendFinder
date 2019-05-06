@@ -22,7 +22,7 @@
   <!-- <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen"> -->
 
   <!-- JS -->
-  <script src="./js/survey.js"></script>
+  <!-- <script src="./js/survey.js"></script> -->
 
   <style>
     body {
@@ -60,12 +60,12 @@
           <div class="card-body">
             <div class="input-field">
               <h5>Name (Required)</h5>
-              <input type="text" class="validate" placeholder="Your Name Here" id="userName">
+              <input type="text" class="validate" placeholder="Your Name Here" id="name" value="Jon">
             </div><br>
 
             <div class="input-field">
               <h5>Link to Photo Image (Required)</h5>
-              <input type="text" class="validate" placeholder="Photo Link Here" id="userPhoto">
+              <input type="text" class="validate" placeholder="Photo Link Here" id="photo" value="photo">
             </div>
           </div>
 
@@ -74,9 +74,9 @@
             <div class="input-field">
               <h3>Question 1</h3>
               <h5>Your mind is always buzzing with unexplored ideas and plans.</h5>
-              <select id="question1">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num1">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -87,9 +87,9 @@
             <div class="input-field">
               <h3>Question 2</h3>
               <h5>Generally speaking, you rely more on your experience than your imagination.</h5>
-              <select id="question2">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num2">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -100,9 +100,9 @@
             <div class="input-field">
               <h3>Question 3</h3>
               <h5>You find it easy to stay relaxed and focused even when there is some pressure.</h5>
-              <select id="question3">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num3">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -113,9 +113,9 @@
             <div class="input-field">
               <h3>Question 4</h3>
               <h5>You rarely do something just out of sheer curiosity.</h5>
-              <select id="question4">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num4">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -126,9 +126,9 @@
             <div class="input-field">
               <h3>Question 5</h3>
               <h5>People can rarely upset you.</h5>
-              <select id="question5">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num5">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -139,9 +139,9 @@
             <div class="input-field">
               <h3>Question 6</h3>
               <h5>It is often difficult for you to relate to other people’s feelings.</h5>
-              <select id="question6">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num6">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -152,9 +152,9 @@
             <div class="input-field">
               <h3>Question 7</h3>
               <h5>In a discussion, truth should be more important than people’s sensitivities.</h5>
-              <select id="question7">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num7">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -165,9 +165,9 @@
             <div class="input-field">
               <h3>Question 8</h3>
               <h5>You rarely get carried away by fantasies and ideas.</h5>
-              <select id="question8">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num8">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -180,9 +180,9 @@
               <h5>You think that everyone’s views should be respected regardless of whether they are supported by
                 facts
                 or not.</h5>
-              <select id="question9">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num9">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -193,9 +193,9 @@
             <div class="input-field">
               <h3>Question 10</h3>
               <h5>You feel more energetic after spending time with a group of people.</h5>
-              <select id="question10">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">1 (Strongly Disagree)</option>
+              <select id="num10">
+                <option value="" disabled selected>Select your response</option>
+                <option value="1" selected="selected">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -228,12 +228,42 @@
   <div id="bestModal" class="modal">
     <div class="modal-content">
       <h4>Closest Friend Match</h4>
-      <div class="divider"></div>
-      <h5 id="userMatch"></h5>
-      <img id="userMatchImage" class="materialboxed" width="650" src="">
+      <h5 id="bestMatch"></h5>
+      <img id="bestMatchImage" src="">
     </div>
   </div>
 
 </body>
 
+<script>
+$("#submitButton").on("click", function (event) {
+    event.preventDefault();
+
+    var surveyData = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [
+            $("#num1").val(),
+            $("#num2").val(),
+            $("#num3").val(),
+            $("#num4").val(),
+            $("#num5").val(),
+            $("#num6").val(),
+            $("#num7").val(),
+            $("#num8").val(),
+            $("#num9").val(),
+            $("#num10").val()
+        ]
+    };
+
+    console.log("surveyData: " + JSON.stringify(surveyData));
+
+    // Add new friend to array
+    $.post("/api/friends", surveyData)
+        .then(function(data) {
+          console.log(data);
+          alert("Adding new friend...");
+        });
+});
+</script>
 </html>

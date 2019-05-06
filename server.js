@@ -2,20 +2,26 @@
 
 var express = require("express")
 var path = require("path")
+var bodyParser = require("body-parser");
 var app = express();
 
 var PORT = process.env.PORT || 3000;
 
-var apiRoutes = require(path.join(__dirname, './app/routing/apiRoutes'))(app);
-var htmlRoutes = require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
+require(path.join(__dirname, './app/routing/apiRoutes'))(app);
+require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
 
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Reveal public dir
 app.use(express.static(path.join(__dirname, './app/public')));
+
 console.log((path.join(__dirname, 'app/public')));
 
 app.listen(PORT, function() {
