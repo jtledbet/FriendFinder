@@ -4,17 +4,23 @@
 //    * A default, catch-all route that leads to `home.html` which displays the home page.
 
 
-const goHome = function () {
-    app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "app/public/home.html"));
-        this.hello = "HELLO"
-    });
-}
+var path = require('path');
 
-const doSurvey = function () {
-    app.get("/survey", function (req, res) {
-        res.sendFile(path.join(__dirname, "app/public/survey.html"));
-    });
-}
+module.exports = function(app) {
+	console.log("html Routes GO!");
 
-module.exports = goHome, doSurvey;
+	// Home page
+	app.get('/', function(req, res) {
+		res.sendFile(path.join(__dirname, '../public/home.html'));
+	});
+
+	// Survey page
+	app.get('/survey', function(req, res) {
+		res.sendFile(path.join(__dirname, '../public/survey.html'));
+    });
+	
+	// Any unfound page
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/error.html'));
+    });
+};
