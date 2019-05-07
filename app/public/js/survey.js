@@ -31,11 +31,24 @@ $("#submitButton").on("click", function (event) {
           console.log("res.name", res.name, "res.photo", res.photo);
           
           $("#best-friend-alert").text("Your new best friend has been identified as " + res.name + "!")
+          $("#best-friend-image").attr("src", res.photo);
+          $("#best-friend-image").attr("width", 450);
                     
     });
 })
 
 $("#modal-close").on("click", function (event) {
     event.preventDefault();
+    
+    // $("#main").find(":text").not(":button", ":submit", ":radio").val("");
+    // $("#main").find(":select").not(":button", ":submit").prop("selectedIndex", 0);
+    window.scrollTo(0, 0);
+    location.reload();
+    
+
+    $(function() {
+        $('body').scrollTop(0);
+     });
+
     console.log("closing modal!")
 });
