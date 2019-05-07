@@ -7,61 +7,70 @@
 
 var friends = require("../data/friends.js");
 
-module.exports = function(app) {
-    console.log ("api Routes GO!")
-    
+module.exports = function (app) {
+    console.log("api Routes GO!")
+
     // Display possible friends:
-    app.get("/api/friends", function(req, res) {
+    app.get("/api/friends", function (req, res) {
         console.log("GET SUCCESSFUL!")
         res.json(friends);
     });
 
     // Incoming survey results:
-    app.post("/api/friends", function(req, res) {
+    app.post("/api/friends", function (req, res) {
         console.log("POSTING!")
 
         console.log(req.body);
 
-		var surveySays = req.body;
-		console.log("surveySays: " + JSON.stringify(surveySays));
+        var surveySays = req.body;
+        console.log("surveySays: " + JSON.stringify(surveySays, 2));
 
-		var justScores = surveySays.scores;
+        var surveyName = req.body.name;
+        console.log("surveyName: " + JSON.stringify(surveyName, 2));
+
+        var justScores = surveySays.scores;
         console.log("scores: " + justScores);
-        
+
 
         var differenceArray = [];
-        var differenceMin = 50;
-        var bestFriend = '';
+        var differenceMin = 40;
+        var bestFriend;
 
-        for(friend in friends) {
+        for (friend in friends) {
             var thisFriend = friends[friend];
+            console.log(thisFriend)
+
             var thisDifference;
             var totalDifference = 0;
-            for (i in thisFriend.scores) {
-                thisDifference = Math.abs(friends[friend].scores[i] - justScores[i])
-                console.log(friends[friend].scores[i] + "minus" + justScores[i] + " = " + thisDifference)
-                console.log(thisDifference, totalDifference)
+
+            for (score in thisFriend.scores) {
+                thisDifference = Math.abs(thisFriend.scores[score] - justScores[score])
                 totalDifference += thisDifference;
             }
 
             differenceArray.push(totalDifference);
 
             for (index in differenceArray) {
+                console.log("index:", index, "difArIn: ", differenceArray[index]) 
+
                 if (differenceArray[index] < differenceMin) {
-                    console.log(differenceMin, differenceArray[index])
                     differenceMin = differenceArray[index];
-                    bestFriend = friends[friend].name;
+                    bestFriend = {
+                        "name": thisFriend.name,
+                        "photo": thisFriend.photo
+                    };
                 }
             }
+        
+
+            console.log("bestFriend: " + bestFriend.name)
         }
 
-        console.log ("min difference!", differenceMin);
-        console.log ("best friend!", bestFriend);
-
-		// Add new user
+        // Add new user
         friends.push(surveySays);
-        
-        res.json(surveySays)
 
-	});
+        var response = (bestFriend);
+        res.json(response);
+
+    });
 }

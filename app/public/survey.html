@@ -6,47 +6,6 @@
   <meta charset="UTF-8">
   <title>FriendFinder</title>
 
-  <link rel="stylesheet" href=".\css\reset.css">
-
-  <!-- Link to the jQuery Library -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-
-  <!-- CSS -->
-  <!-- <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen"> -->
-
-  <!-- JS -->
-  <!-- <script src="./js/survey.js"></script> -->
-
-  <style>
-    body {
-      margin: 0px auto;
-
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-
-      background: slategray;
-      color: white;
-      text-shadow: 1px 1px 1px black;
-    }
-
-    .card-header {
-      background: darkgrey;
-    }
-
-    .card-body {
-      background: gray;
-    }
-  </style>
-
-
 </head>
 
 <body>
@@ -54,7 +13,7 @@
     <div class="container">
       <div class="row col-12-auto">
         <div id="main">
-          <h1>Survey</h1>
+          <h1>Let's Find You a New Best Friend</h1>
 
           <h2 class="card-header">About You:</h2>
           <div class="card-body">
@@ -205,9 +164,14 @@
 
             <!-- Survey Submit Button -->
             <div class="card-footer">
-              <button class="btn-dark col-12" type="submit" name="action" id="submitButton">
-                Submit
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-dark col-12" id="submitButton" data-toggle="modal"
+                data-target="#exampleModal">
+                Submit Responses
               </button>
+              <!-- <button class="btn-dark col-12" type="submit" name="action" id="submitButton">
+                Submit
+              </button> -->
             </div>
           </div>
         </div>
@@ -219,53 +183,46 @@
     <div class="container">
       <a href="/api/friends">API Friends List</a><br>
       © Jon Ledbetter
-      <a href="https://github.com/jtledbet/">GitHub</a>      
+      <a href="https://github.com/jtledbet/">GitHub</a>
     </div>
     </div>
   </footer>
 
-  <!-- Modal Dialog Displaying Closest Friend Match -->
-  <div id="bestModal" class="modal">
-    <div class="modal-content">
-      <h4>Closest Friend Match</h4>
-      <h5 id="bestMatch"></h5>
-      <img id="bestMatchImage" src="">
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Best Friend!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span id="best-friend-alert">Your new best friend has been identified as YOURSELF!</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal-close">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Link to the jQuery Library -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/js/survey.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen">
+
+
 </body>
 
-<script>
-$("#submitButton").on("click", function (event) {
-    event.preventDefault();
-
-    var surveyData = {
-        name: $("#name").val().trim(),
-        photo: $("#photo").val().trim(),
-        scores: 
-        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            // $("#num1").val(),
-            // $("#num2").val(),
-            // $("#num3").val(),
-            // $("#num4").val(),
-            // $("#num5").val(),
-            // $("#num6").val(),
-            // $("#num7").val(),
-            // $("#num8").val(),
-            // $("#num9").val(),
-            // $("#num10").val()
-        ]
-    };
-
-    console.log("surveyData: " + JSON.stringify(surveyData));
-
-    // Add new friend to array
-    console.log(surveyData)
-    $.post("/api/friends", surveyData)
-        .then(function(data) {
-          console.log(data);
-          console.log("Adding new friend...")
-        });
-});
-</script>
 </html>

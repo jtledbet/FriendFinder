@@ -1,53 +1,28 @@
 var friends = [
     {
-        "name":"Jon",
-        "photo":"https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg",
+        "name": "Jon",
+        "photo": "..data/img/jon.jpg",
         "scores":
             [
-                5,
-                1,
-                4,
-                4,
-                5,
-                1,
-                2,
-                5,
-                4,
-                1
+                5, 1, 4, 4, 5, 1, 2, 5, 4, 1
             ]
-    },    {
-        "name":"Tim",
-        "photo":"https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg",
+    }, {
+        "name": "Lolem",
+        "photo": "..data/img/lolem.jpg",
         "scores":
             [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
+                4, 4, 2, 4, 3, 3, 5, 2, 5, 3
             ]
-    },    {
-        "name":"Todd",
-        "photo":"https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg",
+    }, {
+
+    }, {
+        "name": "Oscar",
+        "photo": "..data/img/oscar.jpeg",
         "scores":
             [
-                5,
-                5,
-                5,
-                5,
-                5,
-                5,
-                5,
-                5,
-                5,
-                5
+                1, 1, 1, 1, 1, 1, 1, 1, 1, 1
             ]
-    },
+    }
 ]
 
 module.exports = friends;

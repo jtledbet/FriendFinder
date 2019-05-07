@@ -1,22 +1,30 @@
 body {
     width: 75%;
-   margin: 0px auto; 
+    margin: 0px auto;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: slategray;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
 
-   display: flex;
-   min-height: 100vh;
-   flex-direction: column;
+.card-header {
+    background: darkgrey;
+}
 
-   background: slategray;
-   color: white;
-   text-shadow: 1px 1px 1px black;
+.card-body {
+    background: gray;
+}
+
+.modal {
+    background-color: gray;
+    color: black;
+    text-shadow: 1px 1px 1px white;
 }
 
 header {
     height: 100px;
-}
-
-header > nav {
-    height: 100%;
 }
 
 main {
@@ -27,29 +35,10 @@ main h1 {
     font-weight: bold;
 }
 
- main h2 {
+main h2 {
     font-weight: 300;
 }
 
-#logo-icon {
-   margin-left: 50px;
-   margin-top: 20px;
-}
-
-#logo {
-    margin-left: 50px;
-    margin-top: 20px;
-}
-
-#head-nav-links {
-    margin-right: 50px;
-    margin-top: 20px;
-}
-
-.mainpanel{
-   margin: 50px;
-}
-
-#mainpanel-content {
-    margin: 50px;
+footer {
+    text-align: center;
 }
