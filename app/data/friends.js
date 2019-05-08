@@ -15,28 +15,28 @@ var friends = [
             ]
     }, {
         "name": "Oscar",
-        "photo": "/img/oscar.jpeg",
+        "photo": "/img/oscar.jpg",
         "scores":
             [
                 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
             ]
     }, {
         "name": "Newt",
-        "photo": "/img/newt.jpeg",
+        "photo": "/img/newt.jpg",
         "scores":
             [
                 1, 2, 3, 4, 5, 4, 3, 2, 5, 1
             ]
     }, {
         "name": "Phil",
-        "photo": "/img/phil.jpeg",
+        "photo": "/img/phil.jpg",
         "scores":
             [
                 5, 4, 3, 2, 1, 2, 3, 4, 5, 1
             ]
     }, {
         "name": "Ted",
-        "photo": "/img/ted.jpeg",
+        "photo": "/img/ted.jpg",
         "scores":
             [
                 5, 5, 5, 5, 5, 5, 5, 5, 5, 5

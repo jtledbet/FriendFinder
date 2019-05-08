@@ -40,15 +40,8 @@ $("#submitButton").on("click", function (event) {
 $("#modal-close").on("click", function (event) {
     event.preventDefault();
     
-    // $("#main").find(":text").not(":button", ":submit", ":radio").val("");
-    // $("#main").find(":select").not(":button", ":submit").prop("selectedIndex", 0);
     window.scrollTo(0, 0);
     location.reload();
     
-
-    $(function() {
-        $('body').scrollTop(0);
-     });
-
     console.log("closing modal!")
 });

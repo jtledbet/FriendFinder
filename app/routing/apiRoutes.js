@@ -46,6 +46,7 @@ module.exports = function (app) {
             for (score in thisFriend.scores) {
                 thisDifference = Math.abs(thisFriend.scores[score] - justScores[score])
                 totalDifference += thisDifference;
+                totalDifferene = totalDifference + thisDifference;
             }
 
             differenceArray.push(totalDifference);
@@ -61,14 +62,14 @@ module.exports = function (app) {
                     };
                 }
             }
-        
-
+    
             console.log("bestFriend: " + bestFriend.name)
         }
 
         // Add new user
         friends.push(surveySays);
 
+        // Respond to query
         var response = (bestFriend);
         res.json(response);
 
